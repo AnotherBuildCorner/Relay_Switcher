@@ -1,0 +1,13 @@
+{
+    "layout": {
+        "hspace": "2mm",
+        "vspace": "2mm",
+        "rows": "3",
+        "cols": "3",
+        "vbonecut": "False",
+        "baketext": "False"
+    },
+    "cuts": {
+        "type": "mousebites"
+    }
+}
