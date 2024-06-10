@@ -48,13 +48,7 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [
-        {
-          "gap": 0.0,
-          "via_gap": 0.0,
-          "width": 0.0
-        }
-      ],
+      "diff_pair_dimensions": [],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -171,18 +165,8 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [
-        0.0,
-        0.5,
-        1.0,
-        1.5
-      ],
-      "via_dimensions": [
-        {
-          "diameter": 0.0,
-          "drill": 0.0
-        }
-      ],
+      "track_widths": [],
+      "via_dimensions": [],
       "zones_allow_external_fillets": false
     },
     "layer_presets": [],
@@ -408,7 +392,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Coms Board V2.kicad_pro",
+    "filename": "Jackless 5mm.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -444,7 +428,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "Coms Board V2.step",
+      "step": "",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -483,11 +467,6 @@
     "subpart_first_id": 65,
     "subpart_id_separator": 0
   },
-  "sheets": [
-    [
-      "6ddb1b78-ef52-4254-ab91-3bc10d130454",
-      ""
-    ]
-  ],
+  "sheets": [],
   "text_variables": {}
 }
