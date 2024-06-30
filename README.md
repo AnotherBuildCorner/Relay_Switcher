@@ -10,6 +10,13 @@ Or maybe you want the ability to control your Star-Trek level board from a small
 Or maybe you looked at the avaliable products, and practically fell out of your chair with the price tag?
 
 Then look no further! In this project you'll find a modular capable, mono or stereo loop bypass switcher with wireless control capability.
+
+## Notes:
+V2 Jackless is up and running in a 6 bay stacked model. In the process a handful of lessons were picked up.
+One, for the jackless model a V3 utilizing probably 3 loops on a single panel with built in signal traces, and possibly breakaway functionality is likely. Attempting to wire the board interconnects resulted in a bit of a mess, one I'm not entirely happy with.
+Two, The original implementations use a completely separate power/control and signal path, not even the grounds are linked. This appears to be an error, and a future revision may include a solderable ground linking pad. In testing this linkage reduced the noise to virtually 0
+Three, the breakout board, while universal has a quirk. When used with the current V2 coms board, Power and ground on the 8 pins are not next to one another. Careful: This may fry some boards.
+Four, some of the pins used on the ESP-32 were linked to serial output, so when those pins are actie, the serial monitor and control are disabled. 
 ## PCB's
 ### Main Driver Board
 ### V2
