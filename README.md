@@ -3,7 +3,7 @@ DIY Relay bypass switcher for audio applications
 
 Are you a Guitarist/Bassist?  Do you have a pedalboard that just keeps on getting more complicated?
 
-Worried about losing the high end to the long capacive runs and buffers?
+Worried about losing the high end to the long capactive runs and buffers?
 
 Or maybe you want the ability to control your Star-Trek level board from a small controller on your desk?
 
