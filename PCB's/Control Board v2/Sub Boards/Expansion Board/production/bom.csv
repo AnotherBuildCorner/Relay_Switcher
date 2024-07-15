@@ -1,0 +1,7 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+J2,PinHeader_1x03_P2.54mm_Vertical,1,LED Strip Conn,
+J3,RJ45_Amphenol_54602-x08_Horizontal,1,Expansion,
+"RPD1_1, RPD1_2, RPD1_3, RPD1_4, RPD1_5, RPD1_6, RPD1_7, RPD1_8",0805,8,10k,
+"SW1, SW3, SW4, SW5, SW6, SW7, SW8",TerminalBlock_4Ucon_1x02_P3.50mm_Vertical,7,SW_Push,
+SW2,TerminalBlock_4Ucon_1x02_P3.50mm_Vertical,1,~,
+U6,QSOP-16_3.9x4.9mm_P0.635mm,1,CD74HC4051M96,

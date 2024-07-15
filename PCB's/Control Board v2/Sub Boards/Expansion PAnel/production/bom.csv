@@ -1,0 +1,8 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+"J2_2, J2",PinHeader_1x03_P2.54mm_Vertical,2,LED Strip Conn,
+"J3_2, J3",RJ45_Amphenol_54602-x08_Horizontal,2,Expansion,
+"KiKit_MB_1_1, KiKit_MB_1_2, KiKit_MB_1_3, KiKit_MB_1_4, KiKit_MB_2_1, KiKit_MB_2_2, KiKit_MB_2_3, KiKit_MB_2_4, KiKit_MB_3_1, KiKit_MB_3_2, KiKit_MB_3_3, KiKit_MB_3_4, KiKit_MB_4_1, KiKit_MB_4_2, KiKit_MB_4_3, KiKit_MB_4_4, KiKit_MB_5_1, KiKit_MB_5_2, KiKit_MB_5_3, KiKit_MB_5_4, KiKit_MB_6_1, KiKit_MB_6_2, KiKit_MB_6_3, KiKit_MB_6_4",NPTH,24,NPTH,
+"RPD1_1_2, RPD1_1, RPD1_2_2, RPD1_2, RPD1_3_2, RPD1_3, RPD1_4_2, RPD1_4, RPD1_5_2, RPD1_5, RPD1_6_2, RPD1_6, RPD1_7_2, RPD1_7, RPD1_8_2, RPD1_8",0805,16,10k,
+"SW1_2, SW1, SW3_2, SW3, SW4_2, SW4, SW5_2, SW5, SW6_2, SW6, SW7_2, SW7, SW8_2, SW8",TerminalBlock_4Ucon_1x02_P3.50mm_Vertical,14,SW_Push,
+"SW2_2, SW2",TerminalBlock_4Ucon_1x02_P3.50mm_Vertical,2,~,
+"U6_2, U6",QSOP-16_3.9x4.9mm_P0.635mm,2,CD74HC4051M96,
