@@ -42,6 +42,7 @@ void setup() {
   Serial.begin(115200);
   Serial.setTimeout(10);
   WiFi.mode(WIFI_STA);
+  delay(2000);
   Serial.print("MAC Address: ");
   Serial.println(WiFi.macAddress());
   for(int i = 0; i <pincount; i++){
@@ -117,7 +118,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   pinstate_1[3] = Data.loop4;
   pinstate_1[4] = Data.loop5;
   pinstate_1[5] = Data.loop6;
-/*
+
   pinstate_2[0] = Data.loop7;
   pinstate_2[1] = Data.loop8;
   pinstate_2[2] = Data.loop9;
@@ -131,7 +132,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   pinstate_3[3] = Data.loop16;
   pinstate_3[4] = Data.loop17;
   pinstate_3[5] = Data.loop18;
-*/
+/*
   pinstate_2[0] = Data.loop1;
   pinstate_2[1] = Data.loop2;
   pinstate_2[2] = Data.loop3;
@@ -144,7 +145,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   pinstate_3[2] = Data.loop3;
   pinstate_3[3] = Data.loop4;
   pinstate_3[4] = Data.loop5;
-  pinstate_3[5] = Data.loop6;
+  pinstate_3[5] = Data.loop6;*/
 
 
 for(int j=0; j<pincount; j++){

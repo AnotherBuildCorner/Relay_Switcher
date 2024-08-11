@@ -1,4 +1,7 @@
 ﻿Designator,Mid X,Mid Y,Rotation,Layer
+BYP1,110.0,-85.0,0.0,top
+BYP2,110.0,-76.0,0.0,top
+BYP3,110.0,-65.0,0.0,top
 Extras1,101.3,-38.9,0.0,top
 I2cScreen1,101.2,-75.02,0.0,top
 J1,38.4,-37.5,90.0,top
