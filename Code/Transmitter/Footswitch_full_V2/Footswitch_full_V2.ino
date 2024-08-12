@@ -8,17 +8,18 @@
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 #define OLED_RESET    -1
+#define screen_switch_time 0
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
-const bool loops_m1[6] = {0,0,0,0,0,0};
+const bool loops_m1[6] = {1,0,0,0,0,0};
 const bool loops_m2[6] = {0,0,0,0,0,0};
 const bool loops_m3[6] = {0,0,0,0,0,0};
 
 bool loops[19] = {0,loops_m1,loops_m2,loops_m3};
 unsigned long timers[4]={0,0,0,0};
 
-const int push_array[2][8] = {{1,3,5,7,9,10,11,12},{0,0,0,0,0,0,0,0}};  //put loop number to be switched by a given switch, first array is main, second is expansion.
-const int hold_array[2][8] = {{2,4,6,8,0,0,0,0},{0,0,0,0,0,0,0,0}}; //loop number on the press/hold function on a given Loop, 0 should mean no hold function
-const bool toggle_mode[2][8] = {{true,true,false,false,true,false,false,false},{false,false,false,false,false,false,false,false}};  //true means when hold active, the push controls the hold pedal,  false means push controls 1, hold controls the other.
+const int push_array[2][8] = {{1,3,5,8,9,10,11,12},{0,0,0,0,0,0,0,0}};  //put loop number to be switched by a given switch, first array is main, second is expansion.
+const int hold_array[2][8] = {{2,4,6,7,0,0,0,0},{0,0,0,0,0,0,0,0}}; //loop number on the press/hold function on a given Loop, 0 should mean no hold function
+const bool toggle_mode[2][8] = {{true,true,true,true,true,false,false,false},{false,false,false,false,false,false,false,false}};  //true means when hold active, the push controls the hold pedal,  false means push controls 1, hold controls the other.
 bool mode_state[2][8] = {{false,false,false,false,false,false,false,false},{false,false,false,false,false,false,false,false}}; //false for hold inactive, true for hold active.
 #define LED_DATA_PIN_1 15
 #define LED_DATA_PIN_2 12
@@ -28,11 +29,13 @@ bool mode_state[2][8] = {{false,false,false,false,false,false,false,false},{fals
 CRGB leds_1[NUM_LEDS];
 CRGB leds_2[NUM_LEDS];
 CRGB leds_3[1];
+const int pwr = 30;
+const int red = 75;
 int Switch_Status[2][NUM_LEDS] = {{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0}};// 0 for off, 1 for push on, 2 for hold active, 3 for hold on, 4 for both active, 5 for toggle off
-int colors[NUM_STATES][3] = {{0,0,0},{100,0,0},{100,0,100},{0,0,100},{100,100,0},{0,100,0}};
+int colors[NUM_STATES][3] = {{0,0,0},{red,0,0},{pwr,0,pwr},{0,0,pwr},{red,pwr,0},{0,pwr,0}};
 
 const char* labels_m1[] = {"Face","Bender","Broadcast","Bad Bob","BlackBox","Revival"};
-const char* labels_m2[] = {"Flange","Doppler","Volante","Megabyte","Tensor","Mercury"};
+const char* labels_m2[] = {"Doppler","Flange","Volante","Megabyte","Tensor","Mercury"};
 const char* labels_m3[] = {"E","E","E","E","E","E"};
 const int label_count = 12;
 typedef struct DataStruct {
@@ -188,6 +191,19 @@ void setup() {
   }
   initLoopState();
   delay(500);
+  PrintSerialString1();
+
+  for(int z = 0; z < 6; z++){
+  Serial.print(loops_m1[z]);
+  Serial.print(loops_m2[z]);
+  Serial.print(loops_m3[z]);
+  Serial.print(" | ");}
+    Serial.println();
+
+  for(int x = 0; x < 19; x++){
+  Serial.print(loops[x]);
+  Serial.print(" | ");}
+  Serial.println();
   esp_now_send(0, (uint8_t *)&Data, sizeof(DataStruct)); //send initial states
 }
 
@@ -251,7 +267,7 @@ void loop() {
         screen_time = ct;
       } else if (mux_deb[j][i] >= error_thresh && readMuxButton(i, j) == false && ct > timers[1]) { // check for button push not hold
         timers[1] = ct + 100;
-        PrintSerialString1();
+        
         if (mode_state[j][i] == true) { // hold engaged
           loop = hold_array[j][i];
           switch_status_control(j, i + 1, holdtrigger, true);
@@ -269,6 +285,7 @@ void loop() {
           screen_time = ct;
 
         }
+        PrintSerialString1();
       }
 
       if (readMuxButton(i, j) == false) {
@@ -288,13 +305,14 @@ void loop() {
   }
 
   // Read the button state
-  if (millis() - 2000 >= screen_time) {
+  
+  if (millis() - screen_switch_time >= screen_time && screen_switch_time != 0) {
     encoderPosition[0] = encoderPosition[1];
     screenPosition[0] = screenPosition[1];
   } else {
     encoderPosition[0] = encoderPosition[2];
     screenPosition[0] = screenPosition[2];
-  }
+ }
 
   buttonState = digitalRead(buttonPin); // Read button state directly
 
@@ -455,6 +473,11 @@ void updateDisplay() {
 }
 
 void initLoopState(){
+  for(int x = 0; x <6; x++){
+    loops[x+1] = loops_m1[x];
+    loops[x+7] = loops_m2[x];
+    loops[x+13] = loops_m3[x];
+  }
     Data.loop1 = loops_m1[0];
     Data.loop2= loops_m1[1];
     Data.loop3= loops_m1[2];

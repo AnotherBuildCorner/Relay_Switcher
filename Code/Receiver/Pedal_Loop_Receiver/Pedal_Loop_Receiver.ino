@@ -6,8 +6,8 @@
 const int pins_1[pincount] = {14,27,26,25,33,32};
 bool pinstate_1[pincount] = {0,0,0,0,0,0};
 
-//const int pins_2[pincount] = {18,19,3,1,23,12};
-const int pins_2[pincount] = {18,19,18,19,23,12};
+const int pins_2[pincount] = {18,19,3,1,23,12};
+//const int pins_2[pincount] = {18,19,18,19,23,12};
 bool pinstate_2[pincount] = {0,0,0,0,0,0};
 // Disable pins 1 and 3 to enable serial coms during runtime
 const int pins_3[pincount] = {15,2,4,16,5,17};
@@ -132,20 +132,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   pinstate_3[3] = Data.loop16;
   pinstate_3[4] = Data.loop17;
   pinstate_3[5] = Data.loop18;
-/*
-  pinstate_2[0] = Data.loop1;
-  pinstate_2[1] = Data.loop2;
-  pinstate_2[2] = Data.loop3;
-  pinstate_2[3] = Data.loop4;
-  pinstate_2[4] = Data.loop5;
-  pinstate_2[5] = Data.loop6;
 
-  pinstate_3[0] = Data.loop1;
-  pinstate_3[1] = Data.loop2;
-  pinstate_3[2] = Data.loop3;
-  pinstate_3[3] = Data.loop4;
-  pinstate_3[4] = Data.loop5;
-  pinstate_3[5] = Data.loop6;*/
 
 
 for(int j=0; j<pincount; j++){
@@ -156,7 +143,7 @@ for(int j=0; j<pincount; j++){
   Serial.print("--[");
   Serial.print(pinstate_1[j]);
   Serial.print("]  | ");}
-  if(j == pincount){Serial.println();}
+  if(j == pincount-1){Serial.println();}
 }
 
 for(int j=0; j<pincount; j++){
@@ -167,18 +154,18 @@ for(int j=0; j<pincount; j++){
   Serial.print("--[");
   Serial.print(pinstate_2[j]);
   Serial.print("]  | ");}
-  if(j == pincount){Serial.println();}
+  if(j == pincount-1){Serial.println();}
 }
 
 for(int j=0; j<pincount; j++){
   digitalWrite(pins_3[j],pinstate_3[j]);
   if(printouts == true){
-  Serial.print("Jack 1 Pin: ");
+  Serial.print("Jack 3 Pin: ");
   Serial.print(pins_3[j]);
   Serial.print("--[");
   Serial.print(pinstate_3[j]);
   Serial.print("]  | ");}
-  if(j == pincount){Serial.println();}
+  if(j == pincount-1){Serial.println();}
 }
 
 
