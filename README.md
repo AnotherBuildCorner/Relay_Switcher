@@ -16,11 +16,11 @@ V2 Jackless is up and running in a 6 bay stacked model. In the process a handful
 - One, for the jackless model a V3 utilizing probably 3 loops on a single panel with built in signal traces, and possibly breakaway functionality is likely. Attempting to wire the board interconnects resulted in a bit of a mess, one I'm not entirely happy with.
 - Two, The original implementations use a completely separate power/control and signal path, not even the grounds are linked. This appears to be an error, and a future revision may include a solderable ground linking pad. In testing this linkage reduced the noise to virtually 0
 - Three, the breakout board, while universal has a quirk. When used with the current V2 coms board, Power and ground on the 8 pins are not next to one another. Careful: This may fry some boards.
-- Four, some of the pins used on the ESP-32 were linked to serial output, so when those pins are actie, the serial monitor and control are disabled. 
+- Four, some of the pins used on the ESP-32 were linked to serial output, so when those pins are active, the serial monitor and control are disabled. 
 ## PCB's
 ### Main Driver Board
 ### V3
-The V3 Design implements some of the noted design problems from V2.
+The V3 Design implements some of the noted design problems from V2. Development has continued exclusively with the 3.5mm pitch model. As these are the parts I have on hand. and increasing the terminal block size appears to have little practical benefit.
 
  Instead of utilizing individual loop boards, there are now a pair of boards linked by a ribbon cable. As a set, these combined boards can support either 6 mono/stereo loops, or 5 mono/stero loops and a stereo input selector depending on relay configuration.
 
@@ -28,12 +28,21 @@ The V3 Design implements some of the noted design problems from V2.
  ![V3 jackless input PCB](<Photos/V3 Jackless Input PCB.png>)
 
  Output Board
- ![V3 jackless Output PCB](https://github.com/AnotherBuildCorner/Relay_Switcher/assets/112969078/63d05eaf-82f2-4c50-b386-1796e34f3956)
+![V3 Output PCB](<Photos/V3 jackless Output only.png>)
 
 This change produces a couple of benefits. First is wiring is vastly improved. with the total wire soldering point count down from 7 per board( L/R in, L/R out, Ground 9V, and Control signal.) Times 6 loop packages. To 16 solder points total for the entire package. As well as being inline, as opposed to scattered across the board.
 
 Additionally, the number of Voltage regulators is down from one per package, to one per PCB (with 3 loops on each). so a 66% reduction overall.
 
+The mentioned power and signal ground linking has been added, provided by the G_link pads located on each PCB, in practice using booth may create a ground loop, so ideally soldering just one is reccomended.
+
+Now the one loss from such a design (albeit minimal in practical usage) is the loops can no longer be order changed by moving around connectors inside the package (or perhaps in the future a complex multi relay network).  In practice this just means physically changing the order of the connected devices at the device instead, and is a minimal downside.
+
+Both Boards Populated
+![Populated](<Photos/V3 Jackless Both Populated.png>)
+
+Complete Stacked model Assembly
+![Complete Assembly](<Photos/V3 Jackless Full Assembly.png>)
 ### V2
 
 ![Screenshot 2024-06-09 213055](https://github.com/AnotherBuildCorner/Relay_Switcher/assets/112969078/63d05eaf-82f2-4c50-b386-1796e34f3956)
