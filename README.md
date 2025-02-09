@@ -29,7 +29,7 @@ V2 Jackless is up and running in a 6 bay stacked model. In the process a handful
 ### V3
 The V3 Design implements some of the noted design problems from V2. Development has continued exclusively with the 3.5mm pitch model. As these are the parts I have on hand. and increasing the terminal block size appears to have little practical benefit.
 
- Instead of utilizing individual loop boards, there are now a pair of boards linked by a ribbon cable. As a set, these combined boards can support either 6 mono/stereo loops, or 5 mono/stero loops and a stereo input selector depending on relay configuration.
+ Instead of utilizing individual loop boards, there are now a pair of boards linked by a ribbon cable. As a set, these combined boards can support either 6 mono/stereo loops, or 5 mono/stero loops and a mono input selector depending on relay configuration.
 
  Input Board
  ![V3 jackless input PCB](<Photos/V3 Jackless Input PCB.png>)
