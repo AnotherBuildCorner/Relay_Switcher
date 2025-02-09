@@ -19,6 +19,21 @@ V2 Jackless is up and running in a 6 bay stacked model. In the process a handful
 - Four, some of the pins used on the ESP-32 were linked to serial output, so when those pins are actie, the serial monitor and control are disabled. 
 ## PCB's
 ### Main Driver Board
+### V3
+The V3 Design implements some of the noted design problems from V2.
+
+ Instead of utilizing individual loop boards, there are now a pair of boards linked by a ribbon cable. As a set, these combined boards can support either 6 mono/stereo loops, or 5 mono/stero loops and a stereo input selector depending on relay configuration.
+
+ Input Board
+ ![V3 jackless input PCB](https://github.com/AnotherBuildCorner/Relay_Switcher/assets/112969078/63d05eaf-82f2-4c50-b386-1796e34f3956)
+
+ Output Board
+ ![V3 jackless Output PCB](https://github.com/AnotherBuildCorner/Relay_Switcher/assets/112969078/63d05eaf-82f2-4c50-b386-1796e34f3956)
+
+This change produces a couple of benefits. First is wiring is vastly improved. with the total wire soldering point count down from 7 per board( L/R in, L/R out, Ground 9V, and Control signal.) Times 6 loop packages. To 16 solder points total for the entire package. As well as being inline, as opposed to scattered across the board.
+
+Additionally, the number of Voltage regulators is down from one per package, to one per PCB (with 3 loops on each). so a 66% reduction overall.
+
 ### V2
 
 ![Screenshot 2024-06-09 213055](https://github.com/AnotherBuildCorner/Relay_Switcher/assets/112969078/63d05eaf-82f2-4c50-b386-1796e34f3956)
