@@ -28,7 +28,7 @@ The V3 Design implements some of the noted design problems from V2. Development 
  ![V3 jackless input PCB](<Photos/V3 Jackless Input PCB.png>)
 
  Output Board
-![V3 Output PCB](<Photos/V3 jackless Output PCB.png>)
+![V3 Output PCB]!(<Photos/V3 Jackless Output PCB.png>)
 
 This change produces a couple of benefits. First is wiring is vastly improved. with the total wire soldering point count down from 7 per board( L/R in, L/R out, Ground 9V, and Control signal.) Times 6 loop packages. To 16 solder points total for the entire package. As well as being inline, as opposed to scattered across the board.
 
