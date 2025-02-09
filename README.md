@@ -25,7 +25,7 @@ The V3 Design implements some of the noted design problems from V2.
  Instead of utilizing individual loop boards, there are now a pair of boards linked by a ribbon cable. As a set, these combined boards can support either 6 mono/stereo loops, or 5 mono/stero loops and a stereo input selector depending on relay configuration.
 
  Input Board
- ![V3 jackless input PCB](https://github.com/AnotherBuildCorner/Relay_Switcher/assets/112969078/63d05eaf-82f2-4c50-b386-1796e34f3956)
+ ![V3 jackless input PCB](<Photos/V3 Jackless Input PCB.png>)
 
  Output Board
  ![V3 jackless Output PCB](https://github.com/AnotherBuildCorner/Relay_Switcher/assets/112969078/63d05eaf-82f2-4c50-b386-1796e34f3956)
